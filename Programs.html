@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Quizzie</title>
+<meta charset="utf-8">
+<link rel="stylesheet" href="css/reset.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/layout.css" type="text/css" media="all">
+<link rel="stylesheet" href="css/style.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery-1.5.2.js" ></script>
+<script type="text/javascript" src="js/cufon-yui.js"></script>
+<script type="text/javascript" src="js/cufon-replace.js"></script>
+<script type="text/javascript" src="js/Molengo_400.font.js"></script>
+<script type="text/javascript" src="js/Expletus_Sans_400.font.js"></script>
+
+</head>
+<body id="page3">
+<div class="body1">
+	<div class="main">
+<!-- header -->
+		<header>
+			<div class="wrapper">
+				<nav>
+					<ul id="menu">
+						<li><a href="index.html">Home</a></li>
+						<li><a href="Programs.html">Quizzie</a></li>
+					</ul>
+				</nav>
+			</div>
+			<div class="wrapper">
+				<h1><a href="index.html" id="logo">Learn Center</a></h1>
+			</div>
+			<div id="slogan">
+			Pahami dan Kerjakan</span><span>Setiap Soal Dengan Cermat !</span>
+			</div>
+		</header>
+<!-- / header -->
+	</div>
+</div>
+
+<script>
+	nosoal = 1;
+	nilai = 0;
+	var soal = new Array();
+	function addSoal(model){
+		soal[nosoal] = new Array();
+		var jwb = model.jawaban.split(",");
+		soal[nosoal][0] = model.pertanyaan;
+		soal[nosoal][1] = jwb.length;
+		for(i=0;i<jwb.length;i++){
+			soal[nosoal][i+2] = jwb[i];
+		}
+		soal[nosoal][jwb.length + 2] = model.benar;
+		soal[nosoal][jwb.length + 3] = model.keterangan;
+		nosoal++;
+	}
+	addSoal({
+		pertanyaan: "Pernyataan yang benar di bawah ini adalah ...",
+		jawaban: "Setiap program C++ terdiri dari satu atau lebih fungsi,Setiap program C++ hanya terdiri dari satu fungsi saja,Fungsi yang pertama kali dikerjakan tidak harus fungsi main(),Tidak ada jawaban yang benar",
+		keterangan: "Setiap program C++ hanya terdiri dari satu atau lebih fungsi saja",
+		benar: "A"
+	});
+	addSoal({
+		pertanyaan: "Pemberian nilai konstanta di bawah ini yang benar adalah ...",
+		jawaban: "#define phi=3.14;,const int lebar 100;,const float phi=3.14;,const kodepos=55000;",
+		keterangan: "Penulisan dalam nilai konstanta diawali dengan kata const dan diikuti dengan tipe data",
+		benar: "C"
+	});
+	addSoal({
+		pertanyaan: "Dari pernyataan di bawah ini<br>int x = 2 <br>while(x < 0){<br>cout << 'X';<br>}<br>Berapa kali X ditampilkan ??",
+		jawaban: "0,1,2,3",
+		keterangan: "Nilai X dideklarasikan 2 sedangkan pernyataan perulangan while nilai X < 0",
+		benar: "A"
+	});
+	addSoal({
+		pertanyaan: "Pemberian nama variabel yang benar adalah ...",
+		jawaban: "Panjang maksimum adalah 255 karakter (ANSI),Tidak membedakan huruf kecil atau huruf besar,Boleh menggunakan kata-kata kunci (keywords) sebagai variabel,Diawali dengan huruf atau underscore (_) dan baru boleh diikuti dengan angka huruf dan garis bawah",
+		keterangan: "...",
+		benar: "A"
+	});
+	addSoal({
+		pertanyaan: "Tanda yang diberikan untuk komentar lebih dari satu baris adalah ...",
+		jawaban: "??,//,{},/*...*/",
+		keterangan: "Penggunaan tanda komentar pada C++ untuk lebih dari satu baris menggunakan /*...*/. Sedangkan untuk komentar yang hanya satu baris menggunakan //",
+		benar: "D"
+	});
+	addSoal({
+		pertanyaan: "Suatu pengenal untuk menyimpan nilai tertentu yang tetap (tidak dapat diubah) digunakan ...",
+		jawaban: "Variabel,Keyword,Konstanta,Identifier",
+		keterangan: "Pengenal untuk menyimpan nilai yang tetap kita gunakan konstanta karena nilaidari konstanta adalah tetap",
+		benar: "C"
+	});
+	addSoal({
+		pertanyaan: "Tipe-tipe data berikut akan memberi nilai output kecuali ...",
+		jawaban: "int,float,void,char",
+		keterangan: "tipe data int, float, dan char akan memberikan nilai output sesuai dengan nilai yang diberikan. Sedangkan void untuk menampilkan output hasil",
+		benar: "C"
+	});
+	addSoal({
+		pertanyaan: "Penentu format integer pada printf adalah ...",
+		jawaban: "%d,%c,%s,%f",
+		keterangan: "%c untuk penentu format karakter, %s untuk penentu format string, sedangkan %f untuk penentu format float",
+		benar: "A"
+	});
+	addSoal({
+		pertanyaan: "Berikut ini adalah tipe data dalam C++ ...",
+		jawaban: "int-float-char-double-const,int-float-char-doubleint,float-doublefloat-longint-const,label-const-int-shortint",
+		keterangan: "Tipe data pada C++ adalah int,float,char,double,const ",
+		benar: "A"
+	});
+	addSoal({
+		pertanyaan: "Perintah input yang biasa digunakan pada C++ ...",
+		jawaban: "cout,cin,scanf,printf",
+		keterangan: "Untuk menginputkan perintah pada C++ menggunakan cin",
+		benar: "B"
+	});
+	function createSoal(nomor){
+		if(nomor == 1){
+			nilai = 0;
+		}
+		document.soal.next.onclick = function(){
+			alert("Cek Dulu Jawabannya");
+		}
+		document.getElementById("nomorsoal").innerHTML = "Soal "+nomor;
+		document.getElementById("dsl").innerHTML = soal[nomor][0];
+		var jawabanxx = "";
+		for(i=2;i<soal[nomor][1]+2;i++){
+			jawabanxx += "<input type='radio' name='jwb' value='"+String.fromCharCode(63+i)+"'> "+soal[nomor][i]+"<br>";
+		}
+		document.getElementById("jwb").innerHTML = jawabanxx;
+		document.soal.cek.onclick = function(){
+			cek(nomor);
+		}
+	}
+	function cek(nomor){
+		tj = soal[nomor][1];
+		cond = 0;
+		document.soal.cek.onclick = function(){
+			alert("Soal Sudah di Cek !");
+		}
+		for(i=0;i<tj;i++){
+			document.soal.jwb[i].disabled = true;
+			if(document.soal.jwb[i].checked){
+				if(document.soal.jwb[i].value == soal[nomor][tj + 2]){
+					cond = 1;
+				}
+			}
+			if(document.soal.jwb[i].value == soal[nomor][tj + 2]){
+				document.soal.jwb[i].checked = true;
+			}
+		}
+		if(cond == 0){
+			alert("Jawaban Salah !! \n" +soal[nomor][tj + 3])
+		}else{
+			alert("Jawaban Benar !!");
+			nilai += 10;
+		}
+		document.soal.next.onclick = function(){
+			if(nomor >= nosoal - 1){
+				alert("Soal Sudah Terjawab Semua\nNilai Anda : "+nilai);
+			}else{
+				createSoal(nomor+1);
+			}
+		}
+	}
+	document.body.onload = function(){
+		createSoal(1);
+	}
+</script>
+<div class="body2">
+	<div class="main">
+<!-- content-->
+			<div class="box1">
+				<div class="wrapper">
+					<article class="col1">
+						<div class="pad_left1">
+							<h2 id='nomorsoal'>Soal</h2>
+						</div>
+						<form name="soal">
+							<div class="wrapper pad_bot2">
+								<p class="pad_bot1 pad_top2"><div id="dsl"></div></p>
+								<div id="jwb"></div>
+								<br>
+								<input type="button" class="button" value="Cek Jawaban" name="cek">
+								<input type="button" class="button" value="Soal Selanjutnya" name="next">
+								<input type="button" class="button" value="Ulangi Evaluasi" onclick="createSoal(1);">
+							</div>
+						</form>
+					</article>
+				</div>
+			</div>
+<!--content-->
+	</div>
+</div>
+</body>
+</html>
