@@ -14,8 +14,9 @@ dapat mengerjakan setiap soal dengan bebas tanpa dikejar waktu :) Well,selamat m
 >> Deskripsi Teknis <<
 Pembuatan website ini menggunakan teknologi HTML, CSS, dan Java Script. HTML dan CSS digunakan untuk pengaturan halaman pada
 tiap website. Sedangkan JavaScript diterapkan dalam pembuatan kuis atau evaluasi pembelajaran. Pengaksesan website evaluasi
-pembelajaran CPPQuizzie hanya dapat dibuka dengan baik menggunakan Google Chrome dan Maxthon
-
+pembelajaran CPPQuizzie hanya dapat dibuka dengan baik menggunakan Internet Explorer dan Maxthon. Apabila pengaksesan website
+menggunakan Google Chrome, pada menu quizzie, soal tidak akan ditampilkan secara otomatis, namum user harus mengklik button
+"Ulangi Evaluasi". Sedangkan jika pengkasesan menggunakan Mozilla Firefox, tampilan website akan terlihat kurang sempurna.
 >> Demo URL <<
 CPPQuizzie dapat diakses pada halaman http://diniyah.github.com/CPPQuizzie
 
