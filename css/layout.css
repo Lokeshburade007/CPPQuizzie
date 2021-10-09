@@ -1,7 +1,7 @@
 .col1, .col2, .col3, .cols { float:left}
-.cols{ width:290px}
+.cols{ width:300px}
 .col1{ width:800px}
-/*.col2{ width:270px}*/
+
 .col_1{ width:232px;float:left;line-height:30px;font-size:14px}
 .col_2{ width:107px;float:left}
 .col_3{ width:179px;float:left}
